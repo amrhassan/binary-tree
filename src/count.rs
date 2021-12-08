@@ -178,6 +178,10 @@ macro_rules! index_walker {
 pub struct CountTree<T>(Option<NodePtr<T>>);
 
 impl<T> CountTree<T> {
+    pub fn rebalance(&mut self) {
+        self.0.as_mut().map(|root| root.rebalance());
+    }
+
     fn root_must(&mut self) -> &mut CountNode<T> {
         &mut **self.0.as_mut().unwrap()
     }
