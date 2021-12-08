@@ -578,11 +578,11 @@ impl<T> CountNode<T> {
         }
     }
 
-    fn lcount(&self) -> u32 {
+    pub fn lcount(&self) -> u32 {
         self.left.as_ref().map_or(0, |tree| tree.count)
     }
 
-    fn rcount(&self) -> u32 {
+    pub fn rcount(&self) -> u32 {
         self.right.as_ref().map_or(0, |tree| tree.count)
     }
 
